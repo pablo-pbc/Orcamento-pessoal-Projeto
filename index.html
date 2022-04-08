@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orçamento pessoal</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+
+    <!-- Bootstrap início -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap fim -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!-- Arquivo JS -->
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5"> <!--Inicio cabeçalho-->
+      <div class="container">
+
+        <a class="navbar-brand" href="#"> <!--Inicio Logo cabeçalho-->
+          <img src="logo.png" width="50" height="35" alt="Orçamento pessoal">
+        </a> <!--Fim Logo cabeçalho-->
+
+        <!--Inicio botão do menu (toggle collapse)-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> <!--Fim botão do menu (toggle collapse)-->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--Inicio Opções do menu-->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="consulta.html">Consulta</a>
+            </li>
+          </ul>
+        </div> <!--Fim Opções do menu-->
+
+      </div>
+    </nav> <!--Fim cabeçalho-->
+
+    <div class="container"> <!--Inicio menu de registro de nova despesa -->
+      
+      <div class="row"> <!--Inicio Titulo -->
+        <div class="col mb-5">
+          <h1 class="display-4">Registro de nova despesa</h1>
+        </div>
+      </div> <!--Fim Titulo -->
+
+      <div class="row mb-2"> <!--Inicio primeira linha de adição de nova despesa (ano, mes, dia e tipo)-->
+
+        <div class="col-md-2"> <!--Inicio da inserção do dia -->
+          <input type="text" class="form-control" placeholder="Dia" id="dia" />
+        </div> <!--Fim da inserção do dia -->
+
+        <div class="col-md-2"> <!--Inicio da seleção do mês-->
+          <select class="form-control" id="mes">
+            <option value="">Mês</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+        </div> <!--Fim da seleção do mês-->
+
+        <div class="col-md-2"> <!--Inicio da seleção do ano-->
+          <select class="form-control" id="ano">
+            <option value="">Ano</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </div> <!--Fim da seleção do ano-->
+
+        <div class="col-md-6"> <!--Inicio seleção do tipo de despesa -->
+          <select class="form-control" id="tipo">
+            <option value="">Tipo</option>
+            <option value="1">Alimentação</option>
+            <option value="2">Educação</option>
+            <option value="3">Lazer</option>
+            <option value="4">Saúde</option>
+            <option value="5">Transporte</option>
+          </select>
+        </div> <!--Inicio seleção do tipo de despesa -->
+
+      </div> <!--Fim primeira linha de adição de nova despesa (ano, mes, dia e tipo)-->
+
+      <div class="row"> <!--Inicio segunda linha de adição de nova despesa (descrição, valor e btn add)-->
+
+        <div class="col-md-8"> <!--Inicio inserção do descritivo da despesa -->
+          <input type="text" class="form-control" placeholder="Descrição" id="descricao" />
+        </div> <!--Fim inserção do descritivo da despesa -->
+
+        <div class="col-md-2"> <!--Inicio inserção do valor da despesa -->
+          <input type="text" class="form-control" placeholder="Valor" id="valor" />
+        </div> <!--Fim inserção do valor da despesa -->
+
+        <div class="col-md-2 d-flex justify-content-end"> <!--Inicio botação de acrescentar despesa -->
+          <button type="button" class="btn btn-primary" onclick="cadastrarDespesa()">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div> <!--Fim botação de acrescentar despesa -->
+
+      </div> <!--Fim segunda linha de adição de nova despesa (descrição, valor e btn add)-->
+    </div> <!--Fim menu de registro de nova despesa -->
+
+    <div class="modal fade" id="mensagemErroSucesso" tabindex="-1" role="dialog" aria-labelledby="titulo-dialog" aria-hidden="true"><!-- Inicio Modal -> Show dialog Erro e sucesso -->
+
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="titulo-dialog"></h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="descricao-dialog">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal" id="texto-btn-modal"></button>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Fim Modal -> Show dialog Erro e sucesso -->
+
+  </body>
+
+</html>
